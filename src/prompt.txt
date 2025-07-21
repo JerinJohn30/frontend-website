@@ -1,0 +1,154 @@
+I want to create a website using react jsx for paper product B2b business. Company name is Captain brothers Inc. 
+1. I have products mentioned in this website: https://www.masseysproduction.com/ 
+2. My target audience would be small and large corporation who use paper towels and can provide me a bulk order. 
+3. I can cater bulk orders, wholesale distribution
+1. FAQs which would answer basic questions customers may have.
+2. this website should give a trustworthy, growth and success colors. Make it professional and the words should be clear and which can be read and understood by people of different age range may it be young business people or old people.
+3. for now add dummy contact and address
+4. Use mui for styling 
+5. create multiple components as required and give me each component in the form of code snippets
+6. There should be a navbar.jsx, main.jsx, etc. Create as per required in a normal website
+7. The App.jsx should contain Routing.
+
+Guide me in creating a full vite-react jsx project for creating this site by giving me instructions and giving me relevant code snippets.
+
+
+
+App.jsx
+import React from 'react';
+import { useLocation } from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
+import LoginPage from './components/LoginPage';
+// import CodeReviewSystem from './components/CodeReviewSystem';
+import PeerSystem from './components/CodeReviewSystem';
+import AdminPanel from './components/adminpanel';
+import CodeScanVisualization from './components/dx';
+import Navbar from './components/Navbar';
+import './index.css';
+import MainContent from './components/MainContent';
+
+function App() {
+  return (
+    <>
+      {shouldShowNavbar && <Navbar />} 
+      <Routes>
+        <Route path="/login" element={<LoginPage />} />
+        <Route
+          path="/"
+          element={
+            isAuthenticated ? <MainContent /> : <Navigate to="/login" replace />
+          }
+        />
+        <Route
+          path="/admin"
+          element={
+            isAuthenticated && isAdmin ? (
+              <AdminPanel />
+            ) : (
+              <Navigate to="/login" replace />
+            )
+          }
+        />
+        <Route path="*" element={<Navigate to="/login" replace />} />
+        <Route path="/dashboard" element={<PeerSystem/>}/>
+        <Route path="/visualization" element={<CodeScanVisualization/>}/>
+        <Route path="/code-review" element={<PeerSystem/>}/>
+      </Routes>
+    </>
+  );
+}
+
+export default App;
+
+Navbar.jsx
+import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import MenuIcon from '@mui/icons-material/Menu';
+import logo_white from '../assets/logo_white.png';
+
+const Navbar = () => {
+  const navigate = useNavigate();
+  const [isAdmin, setIsAdmin] = useState(false);
+  const [anchorEl, setAnchorEl] = useState(null);
+  const open = Boolean(anchorEl);
+
+  useEffect(() => {
+    const token = localStorage.getItem('admin_token');
+    setIsAdmin(token === 'token_for_demo');
+    console.log('Navbar.jsx: token=', token, 'isAdmin=', isAdmin);
+  }, []);
+
+  const handleMenuOpen = (event) => setAnchorEl(event.currentTarget);
+  const handleMenuClose = () => setAnchorEl(null);
+
+  const handleLogout = () => {
+    console.log('Navbar.jsx: Logging out');
+    localStorage.removeItem('admin_token');
+    navigate('/login');
+  };
+
+  const navItems = [
+    { label: 'Dashboard', path: '/dashboard' },
+    { label: 'Profile', path: '/profile' },
+    { label: 'Settings', path: '/settings' },
+    ...(isAdmin ? [{ label: 'Admin', path: '/admin' }] : []),
+    { label: 'Logout', action: handleLogout },
+  ];
+
+  return (
+    <nav className="bg-black fixed w-full z-50 h-[60px]">
+      <div className="flex justify-between items-center px-4 py-0">
+        <div className="flex items-center">
+          <img
+            src={logo_white}
+            alt="Company Logo"
+            className="h-[60px] mr-2.5"
+            aria-label="Company Logo"
+          />
+        </div>
+        <div className="hidden md:flex gap-6">
+          {navItems.map((item, index) => (
+            <button
+              key={index}
+              className="text-white hover:underline cursor-pointer"
+              onClick={() => (item.action ? item.action() : navigate(item.path))}
+              role="button"
+              tabIndex={0}
+              aria-label={item.label}
+              onKeyDown={(e) => e.key === 'Enter' && (item.action ? item.action() : navigate(item.path))}
+            >
+              {item.label}
+            </button>
+          ))}
+        </div>
+        <div className="md:hidden">
+          <button
+            className="text-white p-2"
+            onClick={handleMenuOpen}
+            aria-label="Open navigation menu"
+          >
+            <MenuIcon />
+          </button>
+          {open && (
+            <div className="absolute top-16 right-4 bg-white rounded shadow-lg">
+              {navItems.map((item, index) => (
+                <button
+                  key={index}
+                  className="block w-full text-left px-4 py-2 hover:bg-gray-100"
+                  onClick={() => {
+                    item.action ? item.action() : navigate(item.path);
+                    handleMenuClose();
+                  }}
+                >
+                  {item.label}
+                </button>
+              ))}
+            </div>
+          )}
+        </div>
+      </div>
+    </nav>
+  );
+};
+
+export default Navbar;
