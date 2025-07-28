@@ -1,16 +1,7 @@
 import React from 'react';
-import {
-  Box,
-  Container,
-  Typography,
-  Grid,
-  Card,
-  CardContent,
-  CardMedia,
-  Button,
-  Chip,
-} from '@mui/material';
+import {Box,Container,Typography,Grid,Card,CardContent,CardMedia,Button,Chip,} from '@mui/material';
 import { CheckCircle } from '@mui/icons-material';
+import { Link } from 'react-router-dom';
 
 const Products = () => {
   const products = [
@@ -20,7 +11,7 @@ const Products = () => {
       category: 'Roll Towels',
       description: 'High-absorbency roll towels perfect for commercial kitchens, restaurants, and office spaces. Made from 100% virgin paper pulp.',
       features: ['High Absorbency', 'Commercial Grade', '100% Virgin Pulp', 'Cost Effective'],
-      image: 'https://images.unsplash.com/photo-1584464491033-06628f3a6b7b?w=400',
+      image: 'https://m.media-amazon.com/images/I/41DKIpQqaML._SX300_SY300_QL70_FMwebp_.jpg',
       popular: true,
     },
     {
@@ -29,7 +20,7 @@ const Products = () => {
       category: 'Paper Towels',
       description: 'Professional-grade paper towels designed for high-volume use in corporate environments and industrial settings.',
       features: ['Extra Strong', 'Quick Absorption', 'Lint-Free', 'Bulk Available'],
-      image: 'https://images.unsplash.com/photo-1563453392212-326f5e854473?w=400',
+      image: 'https://m.media-amazon.com/images/I/61FcN4kp9dL._SX679_.jpg',
       popular: false,
     },
     {
@@ -38,7 +29,7 @@ const Products = () => {
       category: 'Bathroom Tissue',
       description: 'Soft yet durable bathroom tissue suitable for high-traffic commercial restrooms and office facilities.',
       features: ['Soft & Strong', 'High Capacity', 'Septic Safe', 'Professional Grade'],
-      image: 'https://images.unsplash.com/photo-1585068091946-199911ba2f6b?w=400',
+      image: 'https://m.media-amazon.com/images/I/71BMHjR+pvL._SX679_.jpg',
       popular: false,
     },
     {
@@ -47,26 +38,17 @@ const Products = () => {
       category: 'Kraft Rolls',
       description: 'Heavy-duty kraft paper rolls ideal for packaging, wrapping, and industrial applications in manufacturing settings.',
       features: ['Heavy Duty', 'Tear Resistant', 'Multi-Purpose', 'Industrial Grade'],
-      image: 'https://images.unsplash.com/photo-1586075010923-2dd4570fb338?w=400',
+      image: 'https://m.media-amazon.com/images/I/51e-gzZKfCS._SX679_.jpg',
       popular: false,
     },
     {
       id: '250W',
-      name: 'Eco-Friendly Roll Towels',
-      category: 'Eco Products',
-      description: 'Environmentally conscious roll towels made from sustainable materials, perfect for eco-aware businesses.',
+      name: 'Premium Luncheon Napkin',
+      category: 'Luncheon Napkin',
+      description: 'Soft and durable premium luncheon napkins made from sustainable materials, ideal for eco-conscious dining and hospitality settings.',
       features: ['Sustainable', 'Biodegradable', 'FSC Certified', 'Green Choice'],
-      image: 'https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?w=400',
+      image: 'https://www.ikea.com/in/en/images/products/mottaga-paper-napkin-white__0773585_pe756338_s5.jpg',
       popular: false,
-    },
-    {
-      id: 'GENERIC',
-      name: 'Custom Branded Tissues',
-      category: 'Custom Products',
-      description: 'Personalized tissue products with your company branding for enhanced corporate identity and customer experience.',
-      features: ['Custom Branding', 'Logo Printing', 'Various Sizes', 'Brand Visibility'],
-      image: 'https://images.unsplash.com/photo-1584464491033-06628f3a6b7b?w=400',
-      popular: true,
     },
   ];
 
@@ -99,7 +81,7 @@ const Products = () => {
 
       <Grid container spacing={4}>
         {products.map((product) => (
-          <Grid item xs={12} sm={6} lg={4} key={product.id}>
+          <Grid size={{xs:12,sm:6,lg:4}} key={product.id}>
             <Card
               sx={{
                 height: '100%',
@@ -132,41 +114,52 @@ const Products = () => {
                 image={product.image}
                 alt={product.name}
                 sx={{
-                  objectFit: 'cover',
+                  objectFit: 'contain',
                 }}
               />
-              <CardContent sx={{ flexGrow: 1, p: 3 }}>
-                <Typography
-                  variant="overline"
-                  sx={{
-                    color: 'primary.main',
-                    fontWeight: 600,
-                    letterSpacing: 1,
-                  }}
-                >
-                  {product.category}
-                </Typography>
-                <Typography
-                  variant="h5"
-                  sx={{
-                    mb: 2,
-                    fontWeight: 600,
-                    color: 'text.primary',
-                  }}
-                >
-                  {product.name}
-                </Typography>
-                <Typography
-                  variant="body2"
-                  sx={{
-                    mb: 3,
-                    color: 'text.secondary',
-                    lineHeight: 1.6,
-                  }}
-                >
-                  {product.description}
-                </Typography>
+              <CardContent 
+                sx={{ 
+                  flexGrow: 1, 
+                  p: 3,
+                  display: 'flex',
+                  flexDirection: 'column',
+                }}
+              >
+                {/* Top content section that grows to push features down */}
+                <Box sx={{ flexGrow: 1 }}>
+                  <Typography
+                    variant="overline"
+                    sx={{
+                      color: 'primary.main',
+                      fontWeight: 600,
+                      letterSpacing: 1,
+                    }}
+                  >
+                    {product.category}
+                  </Typography>
+                  <Typography
+                    variant="h5"
+                    sx={{
+                      mb: 2,
+                      fontWeight: 600,
+                      color: 'text.primary',
+                    }}
+                  >
+                    {product.name}
+                  </Typography>
+                  <Typography
+                    variant="body2"
+                    sx={{
+                      mb: 3,
+                      color: 'text.secondary',
+                      lineHeight: 1.6,
+                    }}
+                  >
+                    {product.description}
+                  </Typography>
+                </Box>
                 
+                {/* Features section - aligned across all cards */}
                 <Box sx={{ mb: 3 }}>
                   {product.features.map((feature, index) => (
                     <Box
@@ -191,11 +184,13 @@ const Products = () => {
                   ))}
                 </Box>
 
+                {/* Button - aligned at bottom across all cards */}
                 <Button
+                  component={Link}
+                  to="/contact"
                   variant="contained"
                   fullWidth
                   sx={{
-                    mt: 'auto',
                     py: 1.5,
                     fontWeight: 600,
                     '&:hover': {

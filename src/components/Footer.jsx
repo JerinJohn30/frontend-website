@@ -1,27 +1,7 @@
 import React from 'react';
-import {
-  Box,
-  Container,
-  Grid,
-  Typography,
-  Link,
-  IconButton,
-  Divider,
-  List,
-  ListItem,
-  ListItemText,
-  Paper,
-} from '@mui/material';
-import {
-  Facebook,
-  Twitter,
-  LinkedIn,
-  Instagram,
-  Phone,
-  Email,
-  LocationOn,
-  Business,
-} from '@mui/icons-material';
+import {Box,Container,Grid,Typography,Link,IconButton,Divider,List,ListItem,ListItemText,
+  Paper,} from '@mui/material';
+import {Facebook,Twitter,LinkedIn,Instagram,Phone,Email,LocationOn,Business,} from '@mui/icons-material';
 import { Link as RouterLink } from 'react-router-dom';
 
 const Footer = () => {
@@ -36,10 +16,10 @@ const Footer = () => {
 
   const productCategories = [
     'Paper Towels',
-    'Toilet Paper',
-    'Facial Tissues',
+    'Roll Towels',
+    'Bathroom Tissues',
     'Napkins',
-    'Industrial Wipes',
+    'Industrial Kraft Rolls',
     'Custom Solutions',
   ];
 
@@ -54,7 +34,7 @@ const Footer = () => {
     },
     {
       icon: <LocationOn sx={{ fontSize: 18 }} />,
-      text: '123 Business Park Drive, Suite 400, New York, NY 10001',
+      text: '51 Adelaide Street, Kingston, O.N.\nK7K 1Y3',
     },
     {
       icon: <Business sx={{ fontSize: 18 }} />,
@@ -66,8 +46,8 @@ const Footer = () => {
     <Box
       component="footer"
       sx={{
-        backgroundColor: 'primary.main',
-        color: 'white',
+        backgroundColor: '#cfd8dc',
+        color: 'black',
         mt: 'auto',
       }}
     >
@@ -76,13 +56,13 @@ const Footer = () => {
         <Box sx={{ py: 6 }}>
           <Grid container spacing={4}>
             {/* Company Information */}
-            <Grid item xs={12} sm={6} md={3}>
+            <Grid size={{xs:12, sm:6, md:3}}>
               <Typography
                 variant="h5"
                 sx={{
                   fontWeight: 700,
                   mb: 3,
-                  color: 'secondary.main',
+                  color: 'primary.main',
                 }}
               >
                 Captain Brothers Inc
@@ -92,7 +72,7 @@ const Footer = () => {
                 sx={{
                   mb: 3,
                   lineHeight: 1.6,
-                  color: 'grey.200',
+                  color: 'black',
                 }}
               >
                 Your trusted partner for bulk paper products. We provide high-quality paper towels, tissues, and more to businesses across the nation.
@@ -109,10 +89,10 @@ const Footer = () => {
                   <IconButton
                     key={index}
                     sx={{
-                      color: 'white',
+                      color: 'black',
                       backgroundColor: 'rgba(255, 255, 255, 0.1)',
                       '&:hover': {
-                        backgroundColor: 'secondary.main',
+                        backgroundColor: 'primary.main',
                         transform: 'translateY(-2px)',
                       },
                       transition: 'all 0.3s ease',
@@ -126,13 +106,13 @@ const Footer = () => {
             </Grid>
 
             {/* Quick Links */}
-            <Grid item xs={12} sm={6} md={2}>
+            <Grid size ={{xs:12, sm:6, md:2}}>
               <Typography
                 variant="h6"
                 sx={{
                   fontWeight: 600,
                   mb: 3,
-                  color: 'secondary.main',
+                  color: 'primary.main',
                 }}
               >
                 Quick Links
@@ -144,11 +124,11 @@ const Footer = () => {
                       component={RouterLink}
                       to={link.path}
                       sx={{
-                        color: 'grey.200',
+                        color: 'black',
                         textDecoration: 'none',
                         fontSize: '0.9rem',
                         '&:hover': {
-                          color: 'secondary.main',
+                          color: 'primary.main',
                           textDecoration: 'underline',
                         },
                         transition: 'color 0.3s ease',
@@ -162,13 +142,13 @@ const Footer = () => {
             </Grid>
 
             {/* Product Categories */}
-            <Grid item xs={12} sm={6} md={3}>
+            <Grid size ={{xs:12, sm:6, md:3}}>
               <Typography
                 variant="h6"
                 sx={{
                   fontWeight: 600,
                   mb: 3,
-                  color: 'secondary.main',
+                  color: 'primary.main',
                 }}
               >
                 Our Products
@@ -179,7 +159,7 @@ const Footer = () => {
                     <Typography
                       variant="body2"
                       sx={{
-                        color: 'grey.200',
+                        color: 'black',
                         fontSize: '0.9rem',
                       }}
                     >
@@ -191,13 +171,13 @@ const Footer = () => {
             </Grid>
 
             {/* Contact Information */}
-            <Grid item xs={12} sm={6} md={4}>
+            <Grid size ={{xs:12, sm:6, md:4}}>
               <Typography
                 variant="h6"
                 sx={{
                   fontWeight: 600,
                   mb: 3,
-                  color: 'secondary.main',
+                  color: 'primary.main',
                 }}
               >
                 Contact Information
@@ -208,20 +188,21 @@ const Footer = () => {
                     key={index}
                     sx={{
                       display: 'flex',
-                      alignItems: 'flex-start',
+                      alignItems: 'center',
                       gap: 1,
                       mb: 2,
                     }}
                   >
-                    <Box sx={{ color: 'secondary.main', mt: 0.5 }}>
+                    <Box sx={{ color: 'primary.main', mt: 0.5 }}>
                       {info.icon}
                     </Box>
                     <Typography
                       variant="body2"
                       sx={{
-                        color: 'grey.200',
+                        color: 'black',
                         fontSize: '0.9rem',
                         lineHeight: 1.4,
+                        whiteSpace: 'pre-line'
                       }}
                     >
                       {info.text}
@@ -245,7 +226,7 @@ const Footer = () => {
                   sx={{
                     fontWeight: 600,
                     mb: 1,
-                    color: 'secondary.main',
+                    color: 'primary.main',
                   }}
                 >
                   Ready to Order?
@@ -253,7 +234,7 @@ const Footer = () => {
                 <Typography
                   variant="body2"
                   sx={{
-                    color: 'grey.200',
+                    color: 'black',
                     fontSize: '0.85rem',
                     lineHeight: 1.4,
                   }}
@@ -281,7 +262,7 @@ const Footer = () => {
           <Typography
             variant="body2"
             sx={{
-              color: 'grey.300',
+              color: 'black',
               fontSize: '0.85rem',
             }}
           >
@@ -306,11 +287,11 @@ const Footer = () => {
                 key={index}
                 href="#"
                 sx={{
-                  color: 'grey.300',
+                  color: 'black.300',
                   textDecoration: 'none',
                   fontSize: '0.85rem',
                   '&:hover': {
-                    color: 'secondary.main',
+                    color: 'primary.main',
                     textDecoration: 'underline',
                   },
                   transition: 'color 0.3s ease',

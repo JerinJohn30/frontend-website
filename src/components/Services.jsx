@@ -1,24 +1,7 @@
 import React from 'react';
-import {
-  Box,
-  Container,
-  Typography,
-  Grid,
-  Card,
-  CardContent,
-  Avatar,
-  List,
-  ListItem,
-  ListItemIcon,
-  ListItemText,
-} from '@mui/material';
-import {
-  Inventory,
-  LocalShipping,
-  Support,
-  Analytics,
-  CheckCircle,
-} from '@mui/icons-material';
+import {Box,Container,Typography,Grid,Card,CardContent,Avatar,List,ListItem,ListItemIcon,
+  ListItemText,} from '@mui/material';
+import {Inventory,LocalShipping,Support,Analytics,CheckCircle,} from '@mui/icons-material';
 
 const Services = () => {
   const services = [
@@ -69,15 +52,26 @@ const Services = () => {
   ];
 
   return (
-    <Box sx={{ py: 8, backgroundColor: 'background.default' }}>
+    <Box
+      sx={{
+        background: 'linear-gradient(135deg, #1976d2 0%, #42a5f5 100%)',
+        color: 'white',
+        py: 6,
+        position: 'relative',
+        overflow: 'hidden',
+      }}
+    >
       <Container maxWidth="lg">
         <Box sx={{ textAlign: 'center', mb: 6 }}>
           <Typography
-            variant="h2"
+            variant="h1"
             sx={{
-              mb: 2,
-              color: 'primary.main',
+              mb: 3,
               fontWeight: 700,
+              background: 'linear-gradient(45deg, #ffffff, #e3f2fd)',
+              backgroundClip: 'text',
+              WebkitBackgroundClip: 'text',
+              color: 'transparent',
             }}
           >
             Our Services
@@ -85,10 +79,11 @@ const Services = () => {
           <Typography
             variant="h5"
             sx={{
-              color: 'text.secondary',
+              opacity: 0.95,
               maxWidth: '600px',
               mx: 'auto',
               lineHeight: 1.6,
+              fontSize: { xs: '1.25rem', md: '1.5rem' },
             }}
           >
             Comprehensive solutions designed to support your business operations
@@ -98,15 +93,20 @@ const Services = () => {
 
         <Grid container spacing={4}>
           {services.map((service, index) => (
-            <Grid item xs={12} md={6} key={index}>
+            <Grid size={{xs:12,md:6}} key={index}>
               <Card
                 sx={{
                   height: '100%',
                   p: 2,
+                  background: 'rgba(255, 255, 255, 0.1)',
+                  backdropFilter: 'blur(10px)',
+                  border: '1px solid rgba(255, 255, 255, 0.2)',
+                  borderRadius: 4,
+                  color: 'white',
                   transition: 'all 0.3s ease',
                   '&:hover': {
                     transform: 'translateY(-4px)',
-                    boxShadow: '0 12px 24px rgba(0, 0, 0, 0.1)',
+                    background: 'rgba(255, 255, 255, 0.15)',
                   },
                 }}
               >
@@ -114,20 +114,22 @@ const Services = () => {
                   <Box sx={{ display: 'flex', alignItems: 'center', mb: 3 }}>
                     <Avatar
                       sx={{
-                        bgcolor: 'secondary.main',
+                        bgcolor: 'rgba(126, 223, 32, 0.8)',
                         width: 56,
                         height: 56,
                         mr: 2,
                       }}
                     >
-                      {React.cloneElement(service.icon, { sx: { fontSize: 28 } })}
+                      {React.cloneElement(service.icon, { 
+                        sx: { fontSize: 28, color: 'white' } 
+                      })}
                     </Avatar>
                     <Box>
                       <Typography
                         variant="h5"
                         sx={{
                           fontWeight: 600,
-                          color: 'text.primary',
+                          color: 'white',
                           mb: 0.5,
                         }}
                       >
@@ -136,7 +138,7 @@ const Services = () => {
                       <Typography
                         variant="body2"
                         sx={{
-                          color: 'text.secondary',
+                          color: 'rgba(255, 255, 255, 0.9)',
                           fontSize: '1rem',
                         }}
                       >
@@ -151,7 +153,7 @@ const Services = () => {
                         <ListItemIcon sx={{ minWidth: 32 }}>
                           <CheckCircle
                             sx={{
-                              color: 'success.main',
+                              color: '#7EDF20',
                               fontSize: 20,
                             }}
                           />
@@ -160,7 +162,7 @@ const Services = () => {
                           primary={feature}
                           primaryTypographyProps={{
                             fontSize: '0.95rem',
-                            color: 'text.secondary',
+                            color: 'rgba(255, 255, 255, 0.85)',
                           }}
                         />
                       </ListItem>
@@ -171,66 +173,6 @@ const Services = () => {
             </Grid>
           ))}
         </Grid>
-
-        <Box
-          sx={{
-            mt: 8,
-            p: 6,
-            background: 'linear-gradient(135deg, #1976d2 0%, #42a5f5 100%)',
-            borderRadius: 4,
-            color: 'white',
-            textAlign: 'center',
-          }}
-        >
-          <Typography
-            variant="h4"
-            sx={{
-              mb: 3,
-              fontWeight: 600,
-            }}
-          >
-            Ready to Partner with Us?
-          </Typography>
-          <Typography
-            variant="body1"
-            sx={{
-              mb: 4,
-              fontSize: '1.125rem',
-              maxWidth: '600px',
-              mx: 'auto',
-              opacity: 0.95,
-            }}
-          >
-            Join hundreds of satisfied corporate clients who trust Captain Brothers Inc.
-            for their paper product needs. Let's discuss how we can support your business.
-          </Typography>
-          <Grid container spacing={4} sx={{ mt: 2 }}>
-            <Grid item xs={12} sm={4}>
-              <Typography variant="h3" sx={{ fontWeight: 700, mb: 1 }}>
-                500+
-              </Typography>
-              <Typography variant="body1" sx={{ opacity: 0.9 }}>
-                Corporate Clients
-              </Typography>
-            </Grid>
-            <Grid item xs={12} sm={4}>
-              <Typography variant="h3" sx={{ fontWeight: 700, mb: 1 }}>
-                15+
-              </Typography>
-              <Typography variant="body1" sx={{ opacity: 0.9 }}>
-                Years Experience
-              </Typography>
-            </Grid>
-            <Grid item xs={12} sm={4}>
-              <Typography variant="h3" sx={{ fontWeight: 700, mb: 1 }}>
-                24/7
-              </Typography>
-              <Typography variant="body1" sx={{ opacity: 0.9 }}>
-                Customer Support
-              </Typography>
-            </Grid>
-          </Grid>
-        </Box>
       </Container>
     </Box>
   );

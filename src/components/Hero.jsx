@@ -1,27 +1,14 @@
 import React from 'react';
-import {
-  Box,
-  Container,
-  Typography,
-  Button,
-  Grid,
-  Card,
-  CardContent,
-} from '@mui/material';
-import {
-  Business,
-  TrendingUp,
-  Verified,
-  LocalShipping,
-} from '@mui/icons-material';
+import {Box,Container,Typography,Button,Grid,Card,CardContent,} from '@mui/material';
+import {MonetizationOn,Verified,LocalShipping,ShoppingCart,} from '@mui/icons-material';
 import { Link } from 'react-router-dom';
 
 const Hero = () => {
   const stats = [
-    { icon: <Business />, value: '15+', label: 'Years of Excellence' },
-    { icon: <TrendingUp />, value: '500+', label: 'Corporate Clients' },
     { icon: <Verified />, value: '100%', label: 'Quality Assured' },
     { icon: <LocalShipping />, value: '24/7', label: 'Order Processing' },
+    { icon: <MonetizationOn />, value: '100%', label: 'Transparent Costs' },
+    { icon: <ShoppingCart />, value: '10+', label: 'Product Variants' },
   ];
 
   return (
@@ -35,21 +22,21 @@ const Hero = () => {
       }}
     >
       <Container maxWidth="lg">
-        <Grid container spacing={6} alignItems="center">
-          <Grid item xs={12} md={6}>
-            <Typography
+        <Typography
               variant="h1"
               sx={{
-                mb: 3,
+                mb: 4,
                 fontWeight: 700,
                 background: 'linear-gradient(45deg, #ffffff, #e3f2fd)',
                 backgroundClip: 'text',
                 WebkitBackgroundClip: 'text',
                 color: 'transparent',
               }}
-            >
-              Premium Paper Products for Your Business
-            </Typography>
+        >
+            Premium Paper Products for Your Business
+        </Typography>
+        <Grid container spacing={6} alignItems="center">
+          <Grid size={{xs:12,md:6}}>
             <Typography
               variant="h5"
               sx={{
@@ -59,7 +46,7 @@ const Hero = () => {
                 fontSize: { xs: '1.25rem', md: '1.5rem' },
               }}
             >
-              Captain Brothers Inc. delivers high-quality paper towels, tissues, and hygiene products
+              Captain Brothers Inc. aims to deliver high-quality paper towels, tissues, and hygiene products
               to corporations nationwide. Trust us for bulk orders, wholesale distribution, and reliable service.
             </Typography>
             <Box sx={{ display: 'flex', gap: 2, flexWrap: 'wrap' }}>
@@ -106,13 +93,13 @@ const Hero = () => {
               </Button>
             </Box>
           </Grid>
-          <Grid item xs={12} md={6}>
+          <Grid size={{xs:12,md:6}}>
             <Box
               sx={{
                 background: 'rgba(255, 255, 255, 0.1)',
                 backdropFilter: 'blur(10px)',
                 borderRadius: 4,
-                p: 4,
+                p: 2,
                 border: '1px solid rgba(255, 255, 255, 0.2)',
               }}
             >
@@ -121,14 +108,14 @@ const Hero = () => {
               </Typography>
               <Grid container spacing={3}>
                 {stats.map((stat, index) => (
-                  <Grid item xs={6} key={index}>
+                  <Grid size={{xs:6}} key={index}>
                     <Box sx={{ textAlign: 'center' }}>
                       <Box
                         sx={{
                           display: 'flex',
                           justifyContent: 'center',
                           mb: 1,
-                          color: 'secondary.main',
+                          color: '#7EDF20',
                         }}
                       >
                         {React.cloneElement(stat.icon, { sx: { fontSize: 40 } })}

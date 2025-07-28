@@ -1,17 +1,9 @@
 import React, { useState } from 'react';
-import {
-  Box,
-  Container,
-  Typography,
-  Accordion,
-  AccordionSummary,
-  AccordionDetails,
-  Grid,
-} from '@mui/material';
+import {Box,Container,Typography,Accordion,AccordionSummary,AccordionDetails,Grid,} from '@mui/material';
 import { ExpandMore } from '@mui/icons-material';
 
 const FAQ = () => {
-  const [expanded, setExpanded] = useState('panel1');
+  const [expanded, setExpanded] = useState('');
 
   const handleChange = (panel) => (event, isExpanded) => {
     setExpanded(isExpanded ? panel : false);
@@ -50,7 +42,7 @@ const FAQ = () => {
     },
     {
       id: 'panel7',
-      question: 'Can you accommodate special packaging or delivery requirements?',
+      question: 'Can you accommodate special packaging requirements?',
       answer: 'Yes, we understand that different businesses have unique operational needs. We can accommodate special packaging requirements, specific delivery schedules, and even emergency rush orders when necessary. Discuss your specific needs with our team.',
     },
     {
@@ -74,7 +66,7 @@ const FAQ = () => {
   const rightFAQs = faqs.slice(Math.ceil(faqs.length / 2));
 
   return (
-    <Box sx={{ py: 8, backgroundColor: 'background.default' }}>
+    <Box sx={{ backgroundColor: 'background.default', mb:4 }}>
       <Container maxWidth="lg">
         <Box sx={{ textAlign: 'center', mb: 6 }}>
           <Typography
@@ -102,7 +94,7 @@ const FAQ = () => {
         </Box>
 
         <Grid container spacing={4}>
-          <Grid item xs={12} lg={6}>
+          <Grid size={{xs:12,lg:6}}>
             {leftFAQs.map((faq) => (
               <Accordion
                 key={faq.id}
@@ -162,7 +154,7 @@ const FAQ = () => {
             ))}
           </Grid>
 
-          <Grid item xs={12} lg={6}>
+          <Grid size={{xs:12,lg:6}}>
             {rightFAQs.map((faq) => (
               <Accordion
                 key={faq.id}
@@ -258,7 +250,7 @@ const FAQ = () => {
               opacity: 0.9,
             }}
           >
-            Contact us at: <strong>support@captainbrothers.com</strong> | <strong>1-800-CAPTAIN</strong>
+            Contact us at: <strong>sales@captainbrothers.com</strong> | <strong>1-800-CAPTAIN</strong>
           </Typography>
         </Box>
       </Container>

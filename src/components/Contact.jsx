@@ -1,29 +1,7 @@
 import React, { useState } from 'react';
-import {
-  Box,
-  Container,
-  Typography,
-  Grid,
-  Card,
-  CardContent,
-  TextField,
-  Button,
-  Avatar,
-  FormControl,
-  InputLabel,
-  Select,
-  MenuItem,
-  Paper,
-  Divider,
-} from '@mui/material';
-import {
-  Phone,
-  Email,
-  LocationOn,
-  Business,
-  Send,
-  CheckCircle,
-} from '@mui/icons-material';
+import {Box,Container,Typography,Grid,Card,CardContent,TextField,Button,Avatar,FormControl,InputLabel,
+  Select,MenuItem,Paper,Divider,} from '@mui/material';
+import {Phone,Email,LocationOn,Business,Send,CheckCircle,} from '@mui/icons-material';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -74,8 +52,8 @@ const Contact = () => {
     {
       icon: <LocationOn />,
       title: 'Head Office',
-      details: '123 Business Park Drive, Suite 400',
-      subtitle: 'New York, NY 10001, United States',
+      details: '51 Adelaide Street, Kingston, O.N.',
+      subtitle: 'K7K 1Y3',
     },
     {
       icon: <Business />,
@@ -125,7 +103,7 @@ const Contact = () => {
 
       <Grid container spacing={4}>
         {/* Contact Information Cards */}
-        <Grid item xs={12} lg={5}>
+        <Grid size={{xs:12,lg:5}}>
           <Box sx={{ mb: 4 }}>
             <Typography
               variant="h4"
@@ -135,7 +113,7 @@ const Contact = () => {
             </Typography>
             <Grid container spacing={3}>
               {contactInfo.map((info, index) => (
-                <Grid item xs={12} sm={6} lg={12} key={index}>
+                <Grid size={{xs:12,sm:6,lg:12}} key={index}>
                   <Card 
                     sx={{ 
                       height: '100%',
@@ -187,7 +165,7 @@ const Contact = () => {
         </Grid>
 
         {/* Contact Form */}
-        <Grid item xs={12} lg={7}>
+        <Grid size={{xs:12,lg:7}}>
           <Paper elevation={3} sx={{ p: 4, borderRadius: 2 }}>
             <Typography
               variant="h4"
@@ -204,7 +182,7 @@ const Contact = () => {
 
             <form onSubmit={handleSubmit}>
               <Grid container spacing={3}>
-                <Grid item xs={12} sm={6}>
+                <Grid size={{xs:12,sm:6}}>
                   <TextField
                     fullWidth
                     name="name"
@@ -215,7 +193,7 @@ const Contact = () => {
                     variant="outlined"
                   />
                 </Grid>
-                <Grid item xs={12} sm={6}>
+                <Grid size={{xs:12,sm:6}}>
                   <TextField
                     fullWidth
                     name="email"
@@ -227,7 +205,7 @@ const Contact = () => {
                     variant="outlined"
                   />
                 </Grid>
-                <Grid item xs={12} sm={6}>
+                <Grid size={{xs:12,sm:6}}>
                   <TextField
                     fullWidth
                     name="company"
@@ -238,7 +216,7 @@ const Contact = () => {
                     variant="outlined"
                   />
                 </Grid>
-                <Grid item xs={12} sm={6}>
+                <Grid size={{xs:12,lg:5}}>
                   <TextField
                     fullWidth
                     name="phone"
@@ -248,7 +226,7 @@ const Contact = () => {
                     variant="outlined"
                   />
                 </Grid>
-                <Grid item xs={12}>
+                <Grid size={{xs:12}}>
                   <FormControl fullWidth required>
                     <InputLabel>Inquiry Type</InputLabel>
                     <Select
@@ -265,7 +243,7 @@ const Contact = () => {
                     </Select>
                   </FormControl>
                 </Grid>
-                <Grid item xs={12}>
+                <Grid size={{xs:12}}>
                   <TextField
                     fullWidth
                     name="message"
@@ -279,7 +257,7 @@ const Contact = () => {
                     placeholder="Tell us about your paper product needs, order quantity, delivery requirements, and any specific questions you have."
                   />
                 </Grid>
-                <Grid item xs={12}>
+                <Grid size={{xs:12}}>
                   <Button
                     type="submit"
                     variant="contained"
@@ -311,36 +289,24 @@ const Contact = () => {
       {/* Additional Information */}
       <Box sx={{ mt: 8 }}>
         <Paper elevation={2} sx={{ p: 4, backgroundColor: 'primary.light', color: 'white' }}>
-          <Grid container spacing={4} alignItems="center">
-            <Grid item xs={12} md={8}>
-              <Typography variant="h5" sx={{ fontWeight: 600, mb: 2 }}>
-                Why Choose Captain Brothers Inc?
-              </Typography>
-              <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 2 }}>
-                {[
-                  'Competitive Bulk Pricing',
-                  'Fast & Reliable Delivery',
-                  '24/7 Customer Support',
-                  'Quality Guaranteed Products',
-                  'Flexible Payment Terms',
-                  'Custom Solutions Available'
-                ].map((benefit, index) => (
-                  <Box key={index} sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
-                    <CheckCircle sx={{ fontSize: 20 }} />
-                    <Typography variant="body2">{benefit}</Typography>
-                  </Box>
-                ))}
+          <Typography variant="h5" sx={{ fontWeight: 600, mb: 2 }}>
+            Why Choose Captain Brothers Inc?
+          </Typography>
+          <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 2 }}>
+            {[
+              'Competitive Bulk Pricing',
+              'Fast & Reliable Delivery',
+              '24/7 Customer Support',
+              'Quality Guaranteed Products',
+              'Flexible Payment Terms',
+              'Custom Solutions Available'
+            ].map((benefit, index) => (
+              <Box key={index} sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
+                <CheckCircle sx={{ fontSize: 20 }} />
+                <Typography variant="body2">{benefit}</Typography>
               </Box>
-            </Grid>
-            <Grid item xs={12} md={4} sx={{ textAlign: 'center' }}>
-              <Typography variant="h4" sx={{ fontWeight: 700, mb: 1 }}>
-                10,000+
-              </Typography>
-              <Typography variant="body1">
-                Happy Business Customers
-              </Typography>
-            </Grid>
-          </Grid>
+            ))}
+          </Box>
         </Paper>
       </Box>
     </Container>

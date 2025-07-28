@@ -1,18 +1,6 @@
 import React, { useState } from 'react';
-import {
-  AppBar,
-  Toolbar,
-  Typography,
-  Button,
-  Box,
-  IconButton,
-  Drawer,
-  List,
-  ListItem,
-  ListItemText,
-  useTheme,
-  useMediaQuery,
-} from '@mui/material';
+import {AppBar,Toolbar,Typography,Button,Box,IconButton,Drawer,List,ListItem,ListItemText,useTheme,
+  useMediaQuery,} from '@mui/material';
 import { Menu as MenuIcon, Business as BusinessIcon } from '@mui/icons-material';
 import { Link, useLocation } from 'react-router-dom';
 
@@ -26,7 +14,7 @@ const Navbar = () => {
     { label: 'Home', path: '/' },
     { label: 'Products', path: '/products' },
     { label: 'About Us', path: '/about' },
-    { label: 'Contact', path: '/contact' },
+    { label: 'Contact Us', path: '/contact' },
   ];
 
   const handleDrawerToggle = () => {
