@@ -9,6 +9,7 @@ const Navbar = () => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('md'));
   const location = useLocation();
+  const logoPath = '/logo.png';
 
   const navigationItems = [
     { label: 'Home', path: '/' },
@@ -53,7 +54,11 @@ const Navbar = () => {
       <AppBar position="sticky" sx={{ backgroundColor: 'white', boxShadow: 1 }}>
         <Toolbar>
           <Box sx={{ display: 'flex', alignItems: 'center', flexGrow: 1 }}>
-            <BusinessIcon sx={{ color: 'primary.main', mr: 1, fontSize: 32 }} />
+            <img 
+              src={logoPath}
+              alt="Captain Brothers Logo"
+              style={{ width: 60, height: 60, marginRight: 8 }}
+            />
             <Typography
               variant="h5"
               component={Link}
