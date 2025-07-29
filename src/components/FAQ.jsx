@@ -250,7 +250,7 @@ const FAQ = () => {
               opacity: 0.9,
             }}
           >
-            Contact us at: <strong>sales@captainbrothers.com</strong> | <strong>1-800-CAPTAIN</strong>
+            Contact us at: <strong>sales@captainbrothers.com</strong> | <strong>+1 (514) 705-2756</strong>
           </Typography>
         </Box>
       </Container>
