@@ -26,7 +26,7 @@ const Footer = () => {
   const businessInfo = [
     {
       icon: <Phone sx={{ fontSize: 18 }} />,
-      text: '1-800-CAPTAIN (227-8246)',
+      text: '+1 (514) 705-2756',
     },
     {
       icon: <Email sx={{ fontSize: 18 }} />,

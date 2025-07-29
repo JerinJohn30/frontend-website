@@ -40,7 +40,7 @@ const Contact = () => {
     {
       icon: <Phone />,
       title: 'Phone',
-      details: '1-800-CAPTAIN (227-8246)',
+      details: '+1 (514) 705-2756',
       subtitle: 'Monday - Friday: 8:00 AM - 6:00 PM EST',
     },
     {
@@ -101,19 +101,13 @@ const Contact = () => {
         </Typography>
       </Box>
 
-      <Grid container spacing={4}>
+      <Grid container justifyContent="center">
         {/* Contact Information Cards */}
-        <Grid size={{xs:12,lg:5}}>
+        <Grid size={{xs:12}}>
           <Box sx={{ mb: 4 }}>
-            <Typography
-              variant="h4"
-              sx={{ mb: 3, color: 'primary.main', fontWeight: 600 }}
-            >
-              Get In Touch
-            </Typography>
             <Grid container spacing={3}>
               {contactInfo.map((info, index) => (
-                <Grid size={{xs:12,sm:6,lg:12}} key={index}>
+                <Grid size={{xs:12,sm:12,lg:6}} key={index}>
                   <Card 
                     sx={{ 
                       height: '100%',
@@ -162,127 +156,6 @@ const Contact = () => {
               ))}
             </Grid>
           </Box>
-        </Grid>
-
-        {/* Contact Form */}
-        <Grid size={{xs:12,lg:7}}>
-          <Paper elevation={3} sx={{ p: 4, borderRadius: 2 }}>
-            <Typography
-              variant="h4"
-              sx={{ mb: 3, color: 'primary.main', fontWeight: 600 }}
-            >
-              Send Us a Message
-            </Typography>
-            <Typography
-              variant="body1"
-              sx={{ mb: 4, color: 'text.secondary' }}
-            >
-              Fill out the form below and our team will get back to you within 24 hours.
-            </Typography>
-
-            <form onSubmit={handleSubmit}>
-              <Grid container spacing={3}>
-                <Grid size={{xs:12,sm:6}}>
-                  <TextField
-                    fullWidth
-                    name="name"
-                    label="Full Name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    required
-                    variant="outlined"
-                  />
-                </Grid>
-                <Grid size={{xs:12,sm:6}}>
-                  <TextField
-                    fullWidth
-                    name="email"
-                    label="Email Address"
-                    type="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    required
-                    variant="outlined"
-                  />
-                </Grid>
-                <Grid size={{xs:12,sm:6}}>
-                  <TextField
-                    fullWidth
-                    name="company"
-                    label="Company Name"
-                    value={formData.company}
-                    onChange={handleChange}
-                    required
-                    variant="outlined"
-                  />
-                </Grid>
-                <Grid size={{xs:12,lg:5}}>
-                  <TextField
-                    fullWidth
-                    name="phone"
-                    label="Phone Number"
-                    value={formData.phone}
-                    onChange={handleChange}
-                    variant="outlined"
-                  />
-                </Grid>
-                <Grid size={{xs:12}}>
-                  <FormControl fullWidth required>
-                    <InputLabel>Inquiry Type</InputLabel>
-                    <Select
-                      name="inquiryType"
-                      value={formData.inquiryType}
-                      onChange={handleChange}
-                      label="Inquiry Type"
-                    >
-                      <MenuItem value="bulk-order">Bulk Order Inquiry</MenuItem>
-                      <MenuItem value="wholesale">Wholesale Partnership</MenuItem>
-                      <MenuItem value="custom-products">Custom Products</MenuItem>
-                      <MenuItem value="pricing">Pricing Information</MenuItem>
-                      <MenuItem value="general">General Inquiry</MenuItem>
-                    </Select>
-                  </FormControl>
-                </Grid>
-                <Grid size={{xs:12}}>
-                  <TextField
-                    fullWidth
-                    name="message"
-                    label="Message"
-                    multiline
-                    rows={4}
-                    value={formData.message}
-                    onChange={handleChange}
-                    required
-                    variant="outlined"
-                    placeholder="Tell us about your paper product needs, order quantity, delivery requirements, and any specific questions you have."
-                  />
-                </Grid>
-                <Grid size={{xs:12}}>
-                  <Button
-                    type="submit"
-                    variant="contained"
-                    size="large"
-                    startIcon={<Send />}
-                    sx={{
-                      py: 1.5,
-                      px: 4,
-                      fontSize: '1.1rem',
-                      fontWeight: 600,
-                      borderRadius: 2,
-                      boxShadow: 3,
-                      '&:hover': {
-                        boxShadow: 6,
-                        transform: 'translateY(-2px)',
-                      },
-                      transition: 'all 0.3s ease',
-                    }}
-                  >
-                    Send Message
-                  </Button>
-                </Grid>
-              </Grid>
-            </form>
-          </Paper>
         </Grid>
       </Grid>
 

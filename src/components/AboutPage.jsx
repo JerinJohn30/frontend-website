@@ -268,48 +268,6 @@ const AboutPage = () => {
             ))}
           </Box>
         </Box>
-        {/* Certifications and Awards */}
-        <Paper elevation={3} sx={{ p: 4 }}>
-          <Typography
-            variant="h4"
-            sx={{
-              textAlign: 'center',
-              mb: 4,
-              color: 'primary.main',
-              fontWeight: 600,
-            }}
-          >
-            Certifications & Standards
-          </Typography>
-          <Grid container spacing={2} justifyContent="center">
-            {certifications.map((cert, index) => (
-              <Grid size key={index}>
-                <Chip
-                  icon={<Security />}
-                  label={cert}
-                  color="primary"
-                  variant="outlined"
-                  sx={{
-                    p: 1,
-                    '& .MuiChip-label': { fontSize: '0.9rem' },
-                  }}
-                />
-              </Grid>
-            ))}
-          </Grid>
-          <Typography
-            variant="body1"
-            sx={{
-              textAlign: 'center',
-              mt: 4,
-              color: 'text.secondary',
-              lineHeight: 1.6,
-            }}
-          >
-            Our certifications demonstrate our commitment to quality, environmental responsibility, 
-            and workplace safety. We continuously invest in maintaining the highest industry standards.
-          </Typography>
-        </Paper>
       </Container>
       <Box
         sx={{
