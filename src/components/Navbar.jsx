@@ -57,7 +57,7 @@ const Navbar = () => {
             <img 
               src={logoPath}
               alt="Captain Brothers Logo"
-              style={{ width: 60, height: 60, marginRight: 8 }}
+              style={{ width: 70, height: 70, marginRight: 8 }}
             />
             <Typography
               variant="h5"
@@ -65,7 +65,7 @@ const Navbar = () => {
               to="/"
               sx={{
                 fontWeight: 'bold',
-                color: 'primary.main',
+                color: '#333b6aff',
                 textDecoration: 'none',
                 fontSize: { xs: '1.25rem', md: '1.5rem' },
               }}
@@ -76,7 +76,7 @@ const Navbar = () => {
 
           {isMobile ? (
             <IconButton
-              color="primary"
+              color="#333b6aff"
               aria-label="open drawer"
               edge="start"
               onClick={handleDrawerToggle}
@@ -91,11 +91,11 @@ const Navbar = () => {
                   component={Link}
                   to={item.path}
                   sx={{
-                    color: location.pathname === item.path ? 'primary.main' : 'text.primary',
+                    color: location.pathname === item.path ? '#333b6aff' : 'text.primary',
                     fontWeight: location.pathname === item.path ? 600 : 500,
                     fontSize: '1rem',
                     '&:hover': {
-                      backgroundColor: 'primary.light',
+                      backgroundColor: '#333b6aff',
                       color: 'white',
                     },
                   }}

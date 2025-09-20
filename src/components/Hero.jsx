@@ -14,7 +14,7 @@ const Hero = () => {
   return (
     <Box
       sx={{
-        background: 'linear-gradient(135deg, #1976d2 0%, #42a5f5 100%)',
+        background: 'linear-gradient(135deg, #333b6aff 0%, #455295ff 100%)',
         color: 'white',
         py: { xs: 8, md: 12 },
         position: 'relative',
@@ -57,7 +57,7 @@ const Hero = () => {
                 size="large"
                 sx={{
                   backgroundColor: 'white',
-                  color: 'primary.main',
+                  color: '#333B6A',
                   fontSize: '1.125rem',
                   px: 4,
                   py: 1.5,
