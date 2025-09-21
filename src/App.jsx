@@ -9,6 +9,7 @@ import AboutPage from './components/AboutPage';
 import Products from './components/Products';
 import ScrollToTop from './components/ScrollToTop';
 import Contact from './components/Contact';
+import ComingSoon from './components/ComingSoon';
 
 function App() {
   useEffect(() => {
@@ -27,6 +28,7 @@ function App() {
           <Route path="/products" element={<Products />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/upcoming" element={<ComingSoon />} />
         </Routes>
       </Box>
       <Footer />

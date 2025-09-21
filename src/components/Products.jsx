@@ -59,7 +59,7 @@ const Products = () => {
           variant="h2"
           sx={{
             mb: 2,
-            color: 'primary.main',
+            color: '#333b6aff',
             fontWeight: 700,
           }}
         >
@@ -193,8 +193,9 @@ const Products = () => {
                   sx={{
                     py: 1.5,
                     fontWeight: 600,
+                    backgroundColor: '#333b6aff',
                     '&:hover': {
-                      backgroundColor: 'primary.dark',
+                      backgroundColor: 'black',
                     },
                   }}
                 >
@@ -228,6 +229,8 @@ const Products = () => {
             py: 1.5,
             fontSize: '1.125rem',
             fontWeight: 600,
+            color: '#333b6aff',
+            borderColor:'#333b6aff'
           }}
         >
           Contact Our Team

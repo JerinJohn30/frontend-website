@@ -70,7 +70,7 @@ const Contact = () => {
           variant="h2"
           sx={{
             mb: 2,
-            color: 'primary.main',
+            color: '#333b6aff',
             fontWeight: 700,
           }}
         >
@@ -122,7 +122,7 @@ const Contact = () => {
                       <Box sx={{ display: 'flex', alignItems: 'flex-start', gap: 2 }}>
                         <Avatar
                           sx={{
-                            bgcolor: 'primary.main',
+                            bgcolor: '#333b6aff',
                             width: 50,
                             height: 50,
                           }}
@@ -138,7 +138,7 @@ const Contact = () => {
                           </Typography>
                           <Typography
                             variant="body1"
-                            sx={{ color: 'primary.main', fontWeight: 500, mb: 0.5 }}
+                            sx={{ color: '#333b6aff', fontWeight: 500, mb: 0.5 }}
                           >
                             {info.details}
                           </Typography>
@@ -161,7 +161,7 @@ const Contact = () => {
 
       {/* Additional Information */}
       <Box sx={{ mt: 8 }}>
-        <Paper elevation={2} sx={{ p: 4, backgroundColor: 'primary.light', color: 'white' }}>
+        <Paper elevation={2} sx={{ p: 4, backgroundColor: '#455295ff', color: 'white' }}>
           <Typography variant="h5" sx={{ fontWeight: 600, mb: 2 }}>
             Why Choose Captain Brothers Inc?
           </Typography>

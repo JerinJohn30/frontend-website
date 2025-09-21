@@ -62,7 +62,7 @@ const Footer = () => {
                 sx={{
                   fontWeight: 700,
                   mb: 3,
-                  color: 'primary.main',
+                  color: '#333b6aff',
                 }}
               >
                 Captain Brothers Inc
@@ -112,7 +112,7 @@ const Footer = () => {
                 sx={{
                   fontWeight: 600,
                   mb: 3,
-                  color: 'primary.main',
+                  color: '#333b6aff',
                 }}
               >
                 Quick Links
@@ -128,7 +128,7 @@ const Footer = () => {
                         textDecoration: 'none',
                         fontSize: '0.9rem',
                         '&:hover': {
-                          color: 'primary.main',
+                          color: '#333b6aff',
                           textDecoration: 'underline',
                         },
                         transition: 'color 0.3s ease',
@@ -148,7 +148,7 @@ const Footer = () => {
                 sx={{
                   fontWeight: 600,
                   mb: 3,
-                  color: 'primary.main',
+                  color: '#333b6aff',
                 }}
               >
                 Our Products
@@ -177,7 +177,7 @@ const Footer = () => {
                 sx={{
                   fontWeight: 600,
                   mb: 3,
-                  color: 'primary.main',
+                  color: '#333b6aff',
                 }}
               >
                 Contact Information
@@ -193,7 +193,7 @@ const Footer = () => {
                       mb: 2,
                     }}
                   >
-                    <Box sx={{ color: 'primary.main', mt: 0.5 }}>
+                    <Box sx={{ color: '#333b6aff', mt: 0.5 }}>
                       {info.icon}
                     </Box>
                     <Typography
@@ -226,7 +226,7 @@ const Footer = () => {
                   sx={{
                     fontWeight: 600,
                     mb: 1,
-                    color: 'primary.main',
+                    color: '#333b6aff',
                   }}
                 >
                   Ready to Order?
@@ -287,11 +287,11 @@ const Footer = () => {
                 key={index}
                 href="#"
                 sx={{
-                  color: 'black.300',
+                  color: '#333b6aff',
                   textDecoration: 'none',
                   fontSize: '0.85rem',
                   '&:hover': {
-                    color: 'primary.main',
+                    color: 'black',
                     textDecoration: 'underline',
                   },
                   transition: 'color 0.3s ease',

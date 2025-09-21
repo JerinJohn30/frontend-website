@@ -73,7 +73,7 @@ const FAQ = () => {
             variant="h2"
             sx={{
               mb: 2,
-              color: 'primary.main',
+              color: '#333b6aff',
               fontWeight: 700,
             }}
           >
@@ -113,11 +113,11 @@ const FAQ = () => {
                 <AccordionSummary
                   expandIcon={<ExpandMore />}
                   sx={{
-                    backgroundColor: expanded === faq.id ? 'primary.main' : 'white',
+                    backgroundColor: expanded === faq.id ? '#333b6aff' : 'white',
                     color: expanded === faq.id ? 'white' : 'text.primary',
                     minHeight: 64,
                     '&:hover': {
-                      backgroundColor: expanded === faq.id ? 'primary.dark' : 'grey.50',
+                      backgroundColor: expanded === faq.id ? 'black' : 'grey.50',
                     },
                     '& .MuiAccordionSummary-expandIconWrapper': {
                       color: expanded === faq.id ? 'white' : 'text.secondary',
@@ -173,11 +173,11 @@ const FAQ = () => {
                 <AccordionSummary
                   expandIcon={<ExpandMore />}
                   sx={{
-                    backgroundColor: expanded === faq.id ? 'primary.main' : 'white',
+                    backgroundColor: expanded === faq.id ? '#333b6aff' : 'white',
                     color: expanded === faq.id ? 'white' : 'text.primary',
                     minHeight: 64,
                     '&:hover': {
-                      backgroundColor: expanded === faq.id ? 'primary.dark' : 'grey.50',
+                      backgroundColor: expanded === faq.id ? 'black' : 'grey.50',
                     },
                     '& .MuiAccordionSummary-expandIconWrapper': {
                       color: expanded === faq.id ? 'white' : 'text.secondary',
@@ -219,7 +219,7 @@ const FAQ = () => {
           sx={{
             mt: 8,
             p: 4,
-            backgroundColor: 'primary.main',
+            backgroundColor: '#333b6aff',
             borderRadius: 4,
             textAlign: 'center',
             color: 'white',

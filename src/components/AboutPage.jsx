@@ -74,7 +74,7 @@ const AboutPage = () => {
             variant="h2"
             sx={{
               mb: 2,
-              color: 'primary.main',
+              color: '#333b6aff',
               fontWeight: 700,
             }}
           >
@@ -113,7 +113,7 @@ const AboutPage = () => {
             <Paper elevation={3} sx={{ p: 4, height: '100%', textAlign: 'center' }}>
               <Avatar
                 sx={{
-                  bgcolor: 'primary.main',
+                  bgcolor: '#333b6aff',
                   width: 60,
                   height: 60,
                   mx: 'auto',
@@ -122,7 +122,7 @@ const AboutPage = () => {
               >
                 <Star />
               </Avatar>
-              <Typography variant="h5" sx={{ fontWeight: 600, mb: 2, color: 'primary.main' }}>
+              <Typography variant="h5" sx={{ fontWeight: 600, mb: 2, color: '#333b6aff' }}>
                 Our Mission
               </Typography>
               <Typography variant="body1" sx={{ lineHeight: 1.6 }}>
@@ -185,7 +185,7 @@ const AboutPage = () => {
             sx={{
               textAlign: 'center',
               mb: 6,
-              color: 'primary.main',
+              color: '#333b6aff',
               fontWeight: 600,
             }}
           >

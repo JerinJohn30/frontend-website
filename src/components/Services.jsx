@@ -54,7 +54,7 @@ const Services = () => {
   return (
     <Box
       sx={{
-        background: 'linear-gradient(135deg, #1976d2 0%, #42a5f5 100%)',
+        background: 'linear-gradient(135deg, #333b6aff 0%, #455295ff 100%)',
         color: 'white',
         py: 6,
         position: 'relative',

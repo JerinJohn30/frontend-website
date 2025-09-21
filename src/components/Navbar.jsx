@@ -16,6 +16,7 @@ const Navbar = () => {
     { label: 'Products', path: '/products' },
     { label: 'About Us', path: '/about' },
     { label: 'Contact Us', path: '/contact' },
+    { label: 'Coming Soon', path: '/upcoming' },
   ];
 
   const handleDrawerToggle = () => {
