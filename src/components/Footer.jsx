@@ -34,7 +34,7 @@ const Footer = () => {
     },
     {
       icon: <LocationOn sx={{ fontSize: 18 }} />,
-      text: '51 Adelaide Street, Kingston, O.N.\nK7K 1Y3',
+      text: 'Hamilton, O.N.\n',
     },
     {
       icon: <Business sx={{ fontSize: 18 }} />,

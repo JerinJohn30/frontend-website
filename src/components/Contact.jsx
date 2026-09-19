@@ -52,8 +52,8 @@ const Contact = () => {
     {
       icon: <LocationOn />,
       title: 'Head Office',
-      details: '51 Adelaide Street, Kingston, O.N.',
-      subtitle: 'K7K 1Y3',
+      details: 'Hamilton, O.N.',
+      subtitle: '',
     },
     {
       icon: <Business />,
