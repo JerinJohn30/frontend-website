@@ -19,7 +19,7 @@ const Footer = () => {
     'Roll Towels',
     'Bathroom Tissues',
     'Napkins',
-    'Industrial Kraft Rolls',
+    // 'Industrial Kraft Rolls',
     'Custom Solutions',
   ];
 
