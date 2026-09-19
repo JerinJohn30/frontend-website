@@ -52,7 +52,7 @@ const Contact = () => {
     {
       icon: <LocationOn />,
       title: 'Head Office',
-      details: 'Hamilton, O.N.',
+      details: 'Hamilton, Ontario',
       subtitle: '',
     },
     {

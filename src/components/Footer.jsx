@@ -34,7 +34,7 @@ const Footer = () => {
     },
     {
       icon: <LocationOn sx={{ fontSize: 18 }} />,
-      text: 'Hamilton, O.N.\n',
+      text: 'Hamilton, Ontario\n',
     },
     {
       icon: <Business sx={{ fontSize: 18 }} />,
